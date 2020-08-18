@@ -39,11 +39,9 @@ class GsonArrayListFromJsonTest {
 
     @Test
     fun testGsonArrayListFromJsonTest3() {
-        //NOTE: compile requires explicit type specification for val
         val emptyResult = Gson().fromJson(emptyArrayJson, Array<String>::class.java)?.toList()
         Assert.assertEquals(0, emptyResult?.size)
 
-        //NOTE: compile requires explicit type specification for val
         val nullResult = Gson().fromJson(emptyString, Array<String>::class.java)?.toList()
         Assert.assertEquals(null, nullResult)
     }
