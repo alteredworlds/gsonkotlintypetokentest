@@ -39,10 +39,11 @@ class GsonArrayListFromJsonTest {
 
     @Test
     fun testGsonArrayListFromJsonTest3() {
-        // next line won't compile: not enough information to infer parameter T
+        //NOTE: compile requires explicit type specification for val
         val emptyResult = Gson().fromJson(emptyArrayJson, Array<String>::class.java)?.toList()
         Assert.assertEquals(0, emptyResult?.size)
 
+        //NOTE: compile requires explicit type specification for val
         val nullResult = Gson().fromJson(emptyString, Array<String>::class.java)?.toList()
         Assert.assertEquals(null, nullResult)
     }
